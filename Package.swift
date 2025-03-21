@@ -18,7 +18,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "IDWiseNFC",
-            targets: ["IDWiseNFC", "FingerprintPro"]),
+            targets: ["IDWiseNFCTarget"]),
     ],
     dependencies: [
        // Adding external SPM dependencies
@@ -38,5 +38,18 @@ let package = Package(
             url: "https://mobile-sdk.idwise.ai/ios-sdk-nfc/\(idwiseNFCSDKVersion)/IDWiseNFC.xcframework.zip",
             checksum: checksumForIDWiseNFC
         ),
-    ]
+        
+        // Wrapper Target to Link Dependencies
+        .target(
+            name: "IDWiseNFCTarget",
+            dependencies: [
+                "IDWiseNFC",         // Binary Target
+                "FingerprintPro",    // Binary Target
+                .product(name: "DocumentReader", package: "DocumentReader-Swift-Package"),
+                .product(name: "MRZRFID", package: "DocumentReaderMRZRFID-Swift-Package")
+            ],
+            path: "Sources/IDWiseNFCTarget"
+        ),
+    ],
+    swiftLanguageVersions: [.v5]
 )
