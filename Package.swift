@@ -22,8 +22,8 @@ let package = Package(
     ],
     dependencies: [
        // Adding external SPM dependencies
-       .package(url: "https://github.com/regulaforensics/DocumentReader-Swift-Package.git", from: "7.5.4221"),
-       .package(url: "https://github.com/regulaforensics/DocumentReaderMRZRFID-Swift-Package.git", from: "7.5.11018")
+       .package(url: "https://github.com/regulaforensics/DocumentReader-Swift-Package.git", exact: "7.5.4221"),
+       .package(url: "https://github.com/regulaforensics/DocumentReaderMRZRFID-Swift-Package.git", exact: "7.5.11018")
    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
