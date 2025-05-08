@@ -3,11 +3,13 @@
 
 import PackageDescription
 
+let checksumForShield = "28ed6c3a69c62e19fc508176cc4401e6e282a941b0110dfed85b528e39e4a4c3"
 let checksumForFP = "cdceb6f13d2302bfdbf95f26d013264c678058ffbf1226034aaa0be1763d796b"
-let checksumForIDWiseNFC = "7cc8221933006d2ab3896dcf23b9540c9fb862e01e41873e26f25e3ea0c5499c"
+let checksumForIDWiseNFC = "06ed34a13d28bd5cd15216a3ad0a763d9c7fed1906d5dfc551e42f20f45aae57"
 
+let shieldVersion = "1-5-49"
 let fpVersion = "2.7.0"
-let idwiseNFCSDKVersion = "5.4.5"
+let idwiseNFCSDKVersion = "5.5.0"
 
 let package = Package(
     name: "IDWiseNFC",
@@ -29,6 +31,11 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .binaryTarget(
+            name: "ShieldFraud",
+            url: "https://s3.amazonaws.com/cashshield-sdk/shield-ptr-ios-swift-\(shieldVersion).zip",
+            checksum: checksumForShield
+        ),
+        .binaryTarget(
             name: "FingerprintPro",
             url: "https://fpjs-public.s3.amazonaws.com/ios/\(fpVersion)/FingerprintPro-\(fpVersion)-\(checksumForFP).xcframework.zip",
             checksum: checksumForFP
@@ -45,6 +52,7 @@ let package = Package(
             dependencies: [
                 "IDWiseNFC",         // Binary Target
                 "FingerprintPro",    // Binary Target
+                "ShieldFraud",
                 .product(name: "DocumentReader", package: "DocumentReader-Swift-Package"),
                 .product(name: "MRZRFID", package: "DocumentReaderMRZRFID-Swift-Package")
             ],
