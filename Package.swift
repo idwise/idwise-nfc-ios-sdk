@@ -5,16 +5,16 @@ import PackageDescription
 
 let checksumForShield = "3f80bef16ebda425b53a8e9f2e7d4a3ce9b027d8dbcccd057605acca8c3bef83"
 let checksumForFP = "9a9ac84b28395848247b41ce632fd00cbd309c9a99772a9ff0cf2099ef636937"
-let checksumForIDWiseNFC = "62b95b1d53cefe380c7e823fb677acf857a7e6808e8984e44b102ff07db30dc2"
+let checksumForIDWiseNFC = "32b0ee862687293a8502440a5bbe766ba6ec0e30d3f054ccd3291ce3af63c4c6"
 
 let shieldVersion = "1-5-52"
 let fpVersion = "2.11.0"
-let idwiseNFCSDKVersion = "5.8.2"
+let idwiseNFCSDKVersion = "5.9.0"
 
 let package = Package(
     name: "IDWiseNFC",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -25,7 +25,8 @@ let package = Package(
     dependencies: [
        // Adding external SPM dependencies
        .package(url: "https://github.com/regulaforensics/DocumentReader-Swift-Package.git", exact: "7.5.4221"),
-       .package(url: "https://github.com/regulaforensics/DocumentReaderMRZRFID-Swift-Package.git", exact: "7.5.11018")
+       .package(url: "https://github.com/regulaforensics/DocumentReaderMRZRFID-Swift-Package.git", exact: "7.5.11018"),
+       .package(url: "https://github.com/krzyzanowskim/OpenSSL.git", exact: "3.3.1000")
    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -54,7 +55,8 @@ let package = Package(
                 "FingerprintPro",    // Binary Target
                 "ShieldFraud",
                 .product(name: "DocumentReader", package: "DocumentReader-Swift-Package"),
-                .product(name: "MRZRFID", package: "DocumentReaderMRZRFID-Swift-Package")
+                .product(name: "MRZRFID", package: "DocumentReaderMRZRFID-Swift-Package"),
+                .product(name: "OpenSSL", package: "OpenSSL")
             ],
             path: "Sources/IDWiseNFCTarget"
         ),

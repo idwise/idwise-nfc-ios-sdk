@@ -1,5 +1,5 @@
 {
-  "originHash" : "d8300dca44a7a7b6f8a582b039abf2c24d529dc909d186e817b69b84f386c7fc",
+  "originHash" : "0dcc63870e625004607d636a70e70f8190fae0938a24912c912957f069bea7f1",
   "pins" : [
     {
       "identity" : "documentreader-swift-package",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "20eff0a983e090aac26ed12009cf044b32382fa1",
         "version" : "7.5.11018"
+      }
+    },
+    {
+      "identity" : "openssl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/OpenSSL.git",
+      "state" : {
+        "revision" : "7405324f9b1a64a79e5fa3660d2eda901d1337f2",
+        "version" : "3.3.1000"
       }
     },
     {
