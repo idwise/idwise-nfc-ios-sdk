@@ -5,11 +5,11 @@ import PackageDescription
 
 let checksumForShield = "595b5e630c5c78b0a3f740b30a0039bc3444749ae95ce5cabd9bf82f05441b31"
 let checksumForFP = "6c09a037218dc8ac10233d334de4dcdc4832fbf5f057c60ee8932d30d551190f"
-let checksumForIDWiseNFC = "b3eba7d59703056224699566db9abb87561cb0176035253e60bb960a046eb234"
+let checksumForIDWiseNFC = "3d7ff2e837c52abb250835d01a8eeb24921c685719c9801de9fa4897b341e61f"
 
 let shieldVersion = "1-5-57"
 let fpVersion = "2.13.0"
-let idwiseNFCSDKVersion = "6.6.3"
+let idwiseNFCSDKVersion = "6.7.1"
 
 let package = Package(
     name: "IDWiseNFC",
