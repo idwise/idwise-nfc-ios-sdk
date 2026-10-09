@@ -9,7 +9,7 @@ let checksumForIDWiseNFC = "f3c4dd9c26290d3836c22ff81b61f0103096c7aa55d1911b8585
 
 let shieldVersion = "1-5-57"
 let fpVersion = "2.13.0"
-let idwiseNFCSDKVersion = "6.9.5"
+let idwiseNFCSDKVersion = "6.9.6"
 
 let package = Package(
     name: "IDWiseNFC",
